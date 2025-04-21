@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李明的个人简历</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4895ef;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --border-radius: 10px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-info h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .header-info p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin: 10px 0 0;
+        }
+
+        .contact-info {
+            text-align: right;
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .contact-info i {
+            margin-left: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .main-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+
+        .about-text {
+            line-height: 1.8;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+        }
+
+        .experience-item:last-child, .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin: 0;
+        }
+
+        .item-subtitle {
+            font-weight: 500;
+            color: var(--primary-color);
+            margin: 5px 0;
+        }
+
+        .item-date {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        .item-description {
+            margin-top: 10px;
+            color: var(--gray-color);
+        }
+
+        .item-list {
+            padding-left: 20px;
+            margin: 10px 0 0;
+        }
+
+        .item-list li {
+            margin-bottom: 8px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: var(--light-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+        .skill-highlight {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+            margin-bottom: 3px;
+        }
+
+        .contact-value {
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .contact-info {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .contact-info p {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="header">
+            <div class="header-info">
+                <h1>李明</h1>
+                <p>高级全栈工程师</p>
+            </div>
+            <div class="contact-info">
+                <p><i>📧</i> li.ming@example.com</p>
+                <p><i>📱</i> 111-1111-1111</p>
+                <p><i>🌐</i> github.com/liming</p>
+                <p><i>🏠</i> 上海市浦东新区</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="section">
+                    <h2 class="section-title">关于我</h2>
+                    <p class="about-text">
+                        拥有6年全栈开发经验的技术专家，专注于构建高性能、可扩展的Web应用。
+                        精通现代JavaScript框架和云原生技术，热衷于技术创新和团队协作。
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">专业技能</h2>
+                    <div class="skills-container">
+                        <div class="skill skill-highlight">JavaScript</div>
+                        <div class="skill skill-highlight">TypeScript</div>
+                        <div class="skill">React</div>
+                        <div class="skill">Vue.js</div>
+                        <div class="skill">Node.js</div>
+                        <div class="skill">Express</div>
+                        <div class="skill">NestJS</div>
+                        <div class="skill">MongoDB</div>
+                        <div class="skill">PostgreSQL</div>
+                        <div class="skill">Docker</div>
+                        <div class="skill">Kubernetes</div>
+                        <div class="skill">AWS</div>
+                        <div class="skill">CI/CD</div>
+                        <div class="skill">微服务</div>
+                        <div class="skill">RESTful API</div>
+                        <div class="skill">GraphQL</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">联系方式</h2>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-text">
+                            <div class="contact-label">邮箱</div>
+                            <div class="contact-value">li.ming@example.com</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-text">
+                            <div class="contact-label">电话</div>
+                            <div class="contact-value">111-1111-1111</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div class="contact-text">
+                            <div class="contact-label">GitHub</div>
+                            <div class="contact-value">github.com/liming</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🏠</div>
+                        <div class="contact-text">
+                            <div class="contact-label">地址</div>
+                            <div class="contact-value">上海市浦东新区</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-section">
+                <div class="section">
+                    <h2 class="section-title">工作经历</h2>
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <h3 class="item-title">高级全栈工程师</h3>
+                            <span class="item-date">2020.06 - 至今</span>
+                        </div>
+                        <p class="item-subtitle">科技领先有限公司 · 上海</p>
+                        <ul class="item-list">
+                            <li>领导5人开发团队，负责公司核心产品的架构设计和开发</li>
+                            <li>使用React和Node.js重构旧系统，性能提升60%</li>
+                            <li>引入微服务架构，提高系统可扩展性和部署效率</li>
+                            <li>建立CI/CD流程，实现自动化测试和部署</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <h3 class="item-title">全栈开发工程师</h3>
+                            <span class="item-date">2018.03 - 2020.05</span>
+                        </div>
+                        <p class="item-subtitle">创新互联网公司 · 北京</p>
+                        <ul class="item-list">
+                            <li>参与公司SaaS平台的全栈开发工作</li>
+                            <li>使用Vue.js开发管理后台，优化用户体验</li>
+                            <li>设计并实现RESTful API，提高前后端协作效率</li>
+                            <li>优化数据库查询，减少响应时间40%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">教育背景</h2>
+                    <div class="education-item">
+                        <div class="item-header">
+                            <h3 class="item-title">计算机科学与技术 硕士</h3>
+                            <span class="item-date">2015.09 - 2018.06</span>
+                        </div>
+                        <p class="item-subtitle">上海交通大学</p>
+                        <p class="item-description">研究方向：分布式系统与云计算 | GPA: 3.8/4.0</p>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <h3 class="item-title">软件工程 学士</h3>
+                            <span class="item-date">2011.09 - 2015.06</span>
+                        </div>
+                        <p class="item-subtitle">浙江大学</p>
+                        <p class="item-description">校级优秀毕业生 | 专业排名前5%</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">项目经验</h2>
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <h3 class="item-title">企业级数据可视化平台</h3>
+                            <span class="item-date">2022.03 - 2022.12</span>
+                        </div>
+                        <ul class="item-list">
+                            <li>技术栈: React + TypeScript + D3.js + NestJS</li>
+                            <li>设计可配置的数据可视化组件库</li>
+                            <li>实现大数据量的实时渲染和交互</li>
+                            <li>客户包括3家世界500强企业</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <h3 class="item-title">微服务电商平台</h3>
+                            <span class="item-date">2021.01 - 2021.12</span>
+                        </div>
+                        <ul class="item-list">
+                            <li>技术栈: Vue.js + Node.js + MongoDB + Docker</li>
+                            <li>设计并实现基于JWT的身份认证系统</li>
+                            <li>使用Redis优化高并发场景下的性能</li>
+                            <li>日处理订单量超过10万</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
