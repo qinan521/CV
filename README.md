@@ -1,3 +1,8 @@
 # CV
 个人简历(静态html版)
-[![GitHub Sponsors](https://img.shields.io/badge/Sponsor%20Me-GitHub%20Sponsors-blue)](https://github.com/sponsors/your-username)
+## 支持这个项目
+如果你觉得这个项目有帮助，欢迎请我喝杯咖啡 ☕  
+
+| 微信支付 |
+|----------|
+| < img src="./捐赠.jpg" width="150"> |
